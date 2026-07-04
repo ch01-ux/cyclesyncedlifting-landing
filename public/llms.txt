@@ -1,0 +1,33 @@
+# Phase — Cycle-Synced Lifting
+
+> Phase is a strength-training app for iPhone and Apple Watch that programs around the user's menstrual cycle. It pushes training intensity when hormones (estrogen) peak in the late-follicular and ovulatory phases, and eases volume / deloads during the luteal and menstrual phases. It combines a rigorous progressive-overload lifting tracker with cycle-aware programming — a category that sits between period-tracking apps (which don't train you) and standard lifting apps (which ignore the cycle).
+
+## What Phase does
+
+- **Cycle-aware programming**: reads the cycle from Apple Health (or in-app logging) and reshapes each training week by phase — build (follicular), peak / PR attempts (ovulatory "power window"), moderate volume (luteal), deload (menstrual).
+- **Power-window predictions**: maps the next four weeks to training intent and highlights the days the user is most primed to hit personal records (PRs).
+- **Signature progress chart**: a phase-colored estimated-1RM (e1RM) chart that shows strength rising and falling with the cycle.
+- **Real strength tracker**: set logging, plate calculator, live rest timer, RPE, and automatic PR detection (weight, rep, and Epley e1RM).
+- **Apple Watch app**: start a session, log sets, and run a rest-timer ring from the wrist, synced with iPhone.
+- **Privacy**: all cycle and training data stays on-device and in the user's private iCloud — no accounts, no ads, no analytics, no servers.
+
+## Key facts
+
+- Platforms: iOS 17+ (iPhone) and watchOS (Apple Watch).
+- Category: Health & Fitness.
+- Positioning: "cycle-synced lifting" / "train with your cycle."
+- Not medical advice: cycle estimates are for training planning only, never for contraception or family planning.
+- Audience: people who menstruate and lift weights 3–5x/week and want programming that accounts for their cycle.
+
+## Terminology
+
+- **Power window**: the late-follicular/ovulatory phase where strength and power tend to peak; the app encourages PR attempts here.
+- **Phase**: menstrual, follicular, ovulatory, luteal — the four cycle phases the program adapts to.
+- **e1RM**: estimated one-rep max (Epley formula), the app's core strength-trend metric.
+
+## Links
+
+- Home: https://cyclesyncedlifting.com/
+- Privacy Policy: https://cyclesyncedlifting.com/privacy
+- Terms of Use: https://cyclesyncedlifting.com/terms
+- Contact: hello@cyclesyncedlifting.com

@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-paper: #faf8f4;
+  --color-paper-2: #f3f1ea;
+  --color-ink: #16141c;
+  --color-gold: #e8a33d;
+  --color-gold-dark: #a76b12;
+  --color-menstrual: #6e3b5c;
+  --color-follicular: #5e8c61;
+  --color-luteal: #4e6e8e;
+  --color-muted: #78747e;
+
+  --font-display: var(--font-archivo);
+  --font-mono: var(--font-space-mono);
+  --font-sans: var(--font-inter);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #faf8f4;
+  color: #16141c;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* dotted paper texture */
+.bg-dots {
+  background-image: radial-gradient(rgba(22, 20, 28, 0.05) 1.4px, transparent 1.6px);
+  background-size: 32px 32px;
+}
+
+/* warm radial glow */
+.glow {
+  background: radial-gradient(closest-side, rgba(232, 163, 61, 0.22), rgba(232, 163, 61, 0) 70%);
+}
+
+::selection {
+  background: #e8a33d;
+  color: #16141c;
+}
+
+/* legal / prose pages */
+.legal h2 {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  color: #16141c;
+}
+.legal p {
+  margin-top: 0.75rem;
+  line-height: 1.75;
+  color: #46434e;
+}
+.legal ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.legal li {
+  margin-top: 0.4rem;
+  line-height: 1.65;
+  color: #46434e;
+}
+.legal a {
+  color: #a76b12;
+  text-decoration: underline;
+}
+.legal strong {
+  color: #16141c;
 }

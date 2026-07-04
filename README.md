@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Phase — Cycle-Synced Lifting (landing page)
 
-## Getting Started
+Marketing site for **Phase**, the strength tracker that programs around your
+menstrual cycle. Built with **Next.js 16** (App Router) + **Tailwind v4**.
+Domain: **https://cyclesyncedlifting.com**
 
-First, run the development server:
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run start    # serve the production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What's inside
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `app/page.tsx` — the landing page (hero, features, Apple Watch, video, screenshot gallery, privacy, FAQ, CTA).
+- `app/privacy/page.tsx`, `app/terms/page.tsx` — legal pages (App Store requires a live privacy URL).
+- `app/layout.tsx` — fonts (Archivo Black / Space Mono / Inter), SEO metadata, Organization + WebSite JSON-LD.
+- `app/robots.ts`, `app/sitemap.ts`, `app/manifest.ts` — generated `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`.
+- `public/llms.txt` — structured summary for LLM crawlers (llmstxt.org).
+- `public/og.png` — Open Graph / social preview image (1200×630).
+- `public/shots/` — real app screenshots. `public/preview.mp4` — the app preview video.
+- MobileApplication + FAQPage JSON-LD rendered in `app/page.tsx` for rich results.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## SEO checklist (done)
 
-## Learn More
+- ✅ Per-page `<title>` / meta description, canonical URLs, keywords
+- ✅ Open Graph + Twitter cards with a branded OG image
+- ✅ `robots.txt` + `sitemap.xml` (auto-generated, absolute URLs)
+- ✅ `llms.txt` for AI crawlers
+- ✅ JSON-LD: Organization, WebSite, MobileApplication, FAQPage
+- ✅ Semantic headings, descriptive image `alt`, fast static render
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push this repo to GitHub (already set up — see the repo's remote).
+2. In Vercel: **New Project → Import** this repo. Framework auto-detects as
+   Next.js; no env vars needed. Deploy.
+3. **Domain:** Project → Settings → Domains → add `cyclesyncedlifting.com` (and
+   `www`). Point DNS at Vercel:
+   - Apex `cyclesyncedlifting.com` → A record `76.76.21.21` (or Vercel's shown value), **or** use Vercel nameservers.
+   - `www` → CNAME `cname.vercel-dns.com`.
+   Vercel provisions HTTPS automatically.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Before launch — TODOs
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Replace `APP_STORE_URL` in `app/page.tsx` with the real App Store link once the app is live (search `id0000000000`).
+- [ ] Confirm the contact email (`hello@cyclesyncedlifting.com`) has a mailbox, or swap it.
+- [ ] Set real "Effective" dates on `/privacy` and `/terms` if needed.
+- [ ] After deploy, submit the sitemap in Google Search Console and request indexing.
