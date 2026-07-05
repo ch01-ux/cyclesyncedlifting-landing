@@ -17,6 +17,30 @@ const posts = [
     date: "July 5, 2026",
     readingTime: "8 min read",
   },
+  {
+    slug: "cycle-syncing-workout-plan",
+    title: "Cycle Syncing Workout Plan: How to Train in Every Phase (4-Week Template)",
+    excerpt:
+      "What to do in your menstrual, follicular, ovulatory and luteal phases — plus a 4-week strength template you can start this cycle.",
+    date: "July 5, 2026",
+    readingTime: "9 min read",
+  },
+  {
+    slug: "lifting-on-your-period",
+    title: "Lifting on Your Period: What Actually Helps (And What to Skip)",
+    excerpt:
+      "Yes, you can lift on your period. Here's how to adjust volume, intensity and expectations during your menstrual phase — without losing progress.",
+    date: "July 5, 2026",
+    readingTime: "6 min read",
+  },
+  {
+    slug: "what-is-a-power-window",
+    title: "What Is a Power Window? Your Cycle's Strongest Days, Explained",
+    excerpt:
+      "The stretch of your cycle when strength and power output tend to peak — the science, the one caution, and how to find yours.",
+    date: "July 5, 2026",
+    readingTime: "5 min read",
+  },
 ];
 
 export default function Blog() {
@@ -67,7 +91,7 @@ export default function Blog() {
                 href={`/blog/${p.slug}`}
                 className="mt-4 inline-block font-mono text-sm font-bold uppercase tracking-widest text-gold-dark underline decoration-gold decoration-2 underline-offset-4"
               >
-                Read the comparison →
+                Read the post →
               </Link>
             </article>
           ))}

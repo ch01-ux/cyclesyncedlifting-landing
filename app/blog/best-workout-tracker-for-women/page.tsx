@@ -229,6 +229,17 @@ export default function Post() {
             you lift and you have a menstrual cycle, the honest answer is that your
             strength was never linear — and your tracker shouldn&apos;t be either.
           </p>
+          <p>
+            Want the training side of this? Start with our{" "}
+            <Link href="/blog/cycle-syncing-workout-plan">
+              cycle syncing workout plan (with a 4-week template)
+            </Link>{" "}
+            and the explainer on{" "}
+            <Link href="/blog/what-is-a-power-window">
+              your cycle&apos;s power window
+            </Link>
+            .
+          </p>
         </div>
 
         {/* FAQ */}
