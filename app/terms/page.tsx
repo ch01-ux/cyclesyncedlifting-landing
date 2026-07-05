@@ -41,7 +41,7 @@ export default function Terms() {
 
       <h2>3. Medical disclaimer</h2>
       <p>
-        Phase provides <strong>general training education</strong> based on
+        Phase provides <strong>general training education</strong>{" "}based on
         published research about menstrual cycles and exercise. Cycle responses
         vary widely between individuals — Phase&apos;s phase and ovulation estimates
         are <strong>for training planning only</strong>, are <strong>not medical
@@ -83,7 +83,9 @@ export default function Terms() {
 
       <h2>9. Contact</h2>
       <p>
-        Email <a href="mailto:hello@cyclesyncedlifting.com">hello@cyclesyncedlifting.com</a>.
+        Email{" "}
+        <a href="mailto:support@cyclesyncedlifting.com">support@cyclesyncedlifting.com</a>{" "}
+        or visit our <a href="/support">Support page</a>.
       </p>
     </LegalShell>
   );

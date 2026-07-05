@@ -175,6 +175,7 @@ export default function Home() {
             <a href="#watch" className="hover:text-ink">Apple Watch</a>
             <a href="#privacy" className="hover:text-ink">Privacy</a>
             <a href="#faq" className="hover:text-ink">FAQ</a>
+            <a href="/blog" className="hover:text-ink">Blog</a>
           </div>
           <a
             href={APP_STORE_URL}
@@ -459,8 +460,8 @@ export default function Home() {
                 Cycle-Synced Lifting
               </p>
               <p className="mt-4 text-sm leading-relaxed text-paper/60">
-                Strength training that programs around your cycle. For iPhone &amp;
-                Apple Watch.
+                The workout tracker for women who lift — strength programming that
+                follows your cycle. For iPhone &amp; Apple Watch.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-10 font-mono text-sm">
@@ -474,11 +475,12 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-widest text-paper/40">Legal</p>
+                <p className="text-xs uppercase tracking-widest text-paper/40">Company</p>
                 <ul className="mt-3 space-y-2">
+                  <li><a href="/blog" className="hover:text-gold">Blog</a></li>
+                  <li><a href="/support" className="hover:text-gold">Support</a></li>
                   <li><a href="/privacy" className="hover:text-gold">Privacy Policy</a></li>
                   <li><a href="/terms" className="hover:text-gold">Terms of Use</a></li>
-                  <li><a href={`mailto:${EMAIL}`} className="hover:text-gold">Support</a></li>
                 </ul>
               </div>
             </div>

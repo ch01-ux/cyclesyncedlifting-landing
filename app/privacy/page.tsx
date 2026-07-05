@@ -26,7 +26,7 @@ export default function Privacy() {
           private database).
         </li>
         <li>
-          <strong>We cannot see your data.</strong> It is never sent to
+          <strong>We cannot see your data.</strong>{" "}It is never sent to
           Phase&apos;s servers — we don&apos;t operate any servers that receive it.
         </li>
         <li>
@@ -118,7 +118,9 @@ export default function Privacy() {
 
       <h2>Contact</h2>
       <p>
-        Questions? Email <a href="mailto:hello@cyclesyncedlifting.com">hello@cyclesyncedlifting.com</a>.
+        Privacy questions? Email{" "}
+        <a href="mailto:privacy@cyclesyncedlifting.com">privacy@cyclesyncedlifting.com</a>.
+        For anything else, see our <a href="/support">Support page</a>.
       </p>
     </LegalShell>
   );

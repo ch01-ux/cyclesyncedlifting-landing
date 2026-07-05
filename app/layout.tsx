@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   applicationName: "Phase",
   keywords: [
+    "women workout tracker",
+    "best workout tracker for women",
+    "workout tracker for women",
     "cycle syncing",
     "cycle synced lifting",
     "menstrual cycle training",
