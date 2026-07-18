@@ -88,6 +88,9 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+  verification: {
+    google: "coRc4gjqZRELPB70hFzpRfOFTM8iwLNkVniLm-tCap8",
+  },
   icons: { icon: "/icon.png", apple: "/icon.png" },
 };
 
