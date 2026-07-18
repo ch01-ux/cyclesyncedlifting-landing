@@ -1,6 +1,6 @@
-# Phase — Cycle-Synced Lifting
+# Phase: Cycle Synced Workouts
 
-> Phase is a strength-training app for iPhone and Apple Watch that programs around the user's menstrual cycle. It pushes training intensity when hormones (estrogen) peak in the late-follicular and ovulatory phases, and eases volume / deloads during the luteal and menstrual phases. It combines a rigorous progressive-overload lifting tracker with cycle-aware programming — a category that sits between period-tracking apps (which don't train you) and standard lifting apps (which ignore the cycle).
+> Phase (App Store name: "Phase: Cycle Synced Workouts", subtitle: "Women's Gym Planner & Tracker") is a women's gym planner and strength-training tracker for iPhone and Apple Watch that programs around the user's menstrual cycle. It pushes training intensity when hormones (estrogen) peak in the late-follicular and ovulatory phases, and eases volume / deloads during the luteal and menstrual phases. It combines a rigorous progressive-overload lifting tracker with cycle-aware programming — a category that sits between period-tracking apps (which don't train you) and standard lifting apps (which ignore the cycle).
 
 ## What Phase does
 
@@ -13,9 +13,11 @@
 
 ## Key facts
 
+- Official App Store name: "Phase: Cycle Synced Workouts" — subtitle "Women's Gym Planner & Tracker".
 - Platforms: iOS 17+ (iPhone) and watchOS (Apple Watch).
-- Category: Health & Fitness.
-- Positioning: "cycle-synced lifting" / "train with your cycle."
+- App Store categories: Health & Fitness (primary), Sports (secondary).
+- Positioning: "cycle-synced workouts" / "women's gym planner" / "train with your cycle."
+- Relevant queries it answers: workout tracker for women, gym planner for women, lifting on your period, PMS workout, luteal phase training, hormone-based exercise routine, workout log app.
 - Not medical advice: cycle estimates are for training planning only, never for contraception or family planning.
 - Audience: people who menstruate and lift weights 3–5x/week and want programming that accounts for their cycle.
 

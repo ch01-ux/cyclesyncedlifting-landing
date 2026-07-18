@@ -70,6 +70,10 @@ const faqs = [
     a: "Phase learns from the cycles you log and widens its estimates when your cycle is variable. On hormonal birth control, it switches to honest, standard progression instead of faking phases.",
   },
   {
+    q: "Should I still lift during PMS or my luteal phase?",
+    a: "Yes — but smarter, not harder. In the luteal phase recovery often dips and PMS can sap drive, so Phase automatically shifts your routine toward moderate volume and technique work instead of max-effort lifts. You keep training and logging; the app just stops asking for PRs when your hormones aren't there.",
+  },
+  {
     q: "Do I need an Apple Watch?",
     a: "No — Phase is a full iPhone app. But if you have an Apple Watch, you can start a session, log every set, and run your rest timer from your wrist, all in sync with your phone.",
   },
@@ -153,12 +157,14 @@ export default function Home() {
   const appLd = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    name: "Phase — Cycle-Synced Lifting",
+    name: "Phase: Cycle Synced Workouts",
+    alternateName: "Phase",
     operatingSystem: "iOS, watchOS",
     applicationCategory: "HealthApplication",
+    applicationSubCategory: "Sports",
     url: SITE,
     description:
-      "The strength tracker that programs around your menstrual cycle — for iPhone & Apple Watch.",
+      "Women's gym planner & workout tracker that syncs strength training to your menstrual cycle — for iPhone & Apple Watch.",
     offers: { "@type": "Offer", category: "subscription" },
   };
 
@@ -197,9 +203,10 @@ export default function Home() {
               <span className="block text-gold">It moves with your cycle.</span>
             </h1>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-              Phase is the strength tracker that programs around your menstrual
-              cycle — push PRs when your hormones peak, auto-deload when they
-              don&apos;t, and finally understand your &ldquo;off&rdquo; weeks.
+              Phase is the women&apos;s gym planner &amp; workout tracker that
+              programs around your menstrual cycle — push PRs when your hormones
+              peak, ease off through PMS week, and finally understand your
+              &ldquo;off&rdquo; weeks.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <AppStoreButton />
@@ -460,8 +467,9 @@ export default function Home() {
                 Cycle-Synced Lifting
               </p>
               <p className="mt-4 text-sm leading-relaxed text-paper/60">
-                The workout tracker for women who lift — strength programming that
-                follows your cycle. For iPhone &amp; Apple Watch.
+                The women&apos;s gym planner &amp; workout tracker — strength
+                programming that follows your menstrual cycle. For iPhone &amp;
+                Apple Watch.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-10 font-mono text-sm">

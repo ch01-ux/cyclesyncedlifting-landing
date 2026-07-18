@@ -22,33 +22,40 @@ const inter = Inter({
 
 const SITE = "https://cyclesyncedlifting.com";
 const DESCRIPTION =
-  "Phase is the strength tracker that programs around your menstrual cycle — push PRs when your hormones peak, auto-deload when they don't, and stop blaming yourself for weak weeks. Cycle-synced lifting for iPhone & Apple Watch.";
+  "Phase is the women's gym planner & workout tracker that syncs strength training to your menstrual cycle — push PRs when your hormones peak, ease off through PMS. For iPhone & Apple Watch.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Phase — Cycle-Synced Lifting | Strength training for your cycle",
+    default: "Phase: Cycle Synced Workouts — Women's Gym Planner & Tracker",
     template: "%s · Phase",
   },
   description: DESCRIPTION,
-  applicationName: "Phase",
+  applicationName: "Phase: Cycle Synced Workouts",
   keywords: [
+    "cycle synced workouts",
+    "women's gym planner",
     "women workout tracker",
     "best workout tracker for women",
     "workout tracker for women",
+    "workout log app",
     "cycle syncing",
     "cycle synced lifting",
     "menstrual cycle training",
     "strength training for women",
+    "female fitness app",
     "period workout app",
+    "PMS workout",
     "follicular phase training",
-    "luteal phase",
+    "luteal phase workout",
+    "hormone cycle workout",
+    "exercise routine for women",
+    "weight lifting app for women",
     "power window",
     "PR tracker",
     "e1RM",
     "Apple Watch strength tracker",
     "women's weightlifting app",
-    "hormone cycle workout",
   ],
   authors: [{ name: "Cycle Synced Lifting" }],
   creator: "Cycle Synced Lifting",
@@ -57,8 +64,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE,
-    siteName: "Phase — Cycle-Synced Lifting",
-    title: "Phase — Cycle-Synced Lifting",
+    siteName: "Phase: Cycle Synced Workouts",
+    title: "Phase: Cycle Synced Workouts — Women's Gym Planner & Tracker",
     description: DESCRIPTION,
     locale: "en_US",
     images: [
@@ -72,7 +79,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phase — Cycle-Synced Lifting",
+    title: "Phase: Cycle Synced Workouts — Women's Gym Planner & Tracker",
     description: DESCRIPTION,
     images: ["/og.png"],
   },
@@ -90,12 +97,15 @@ const orgLd = {
   name: "Cycle Synced Lifting",
   url: SITE,
   logo: `${SITE}/icon.png`,
+  description:
+    "Maker of Phase: Cycle Synced Workouts — a women's gym planner & strength tracker for iPhone and Apple Watch that programs training around the menstrual cycle.",
 };
 
 const siteLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Phase — Cycle-Synced Lifting",
+  name: "Phase: Cycle Synced Workouts",
+  alternateName: ["Phase", "Cycle Synced Lifting"],
   url: SITE,
 };
 
