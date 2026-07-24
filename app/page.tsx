@@ -2,7 +2,7 @@ import Image from "next/image";
 
 /* ------------------------------------------------------------------ config */
 const SITE = "https://cyclesyncedlifting.com";
-const APP_STORE_URL = "https://apps.apple.com/app/id0000000000"; // TODO: real App Store URL at launch
+const APP_STORE_URL = "https://apps.apple.com/us/app/phase-cycle-synced-workouts/id6785094654";
 const EMAIL = "hello@cyclesyncedlifting.com";
 
 const phases = [
@@ -103,7 +103,7 @@ function AppStoreButton({ className = "" }: { className?: string }) {
       </svg>
       <span className="text-left leading-tight">
         <span className="block text-[0.65rem] font-mono uppercase tracking-widest text-paper/70">
-          Coming soon
+          Now available
         </span>
         <span className="block text-base font-semibold">Download on the App Store</span>
       </span>
@@ -163,6 +163,8 @@ export default function Home() {
     applicationCategory: "HealthApplication",
     applicationSubCategory: "Sports",
     url: SITE,
+    installUrl: APP_STORE_URL,
+    downloadUrl: APP_STORE_URL,
     description:
       "Women's gym planner & workout tracker that syncs strength training to your menstrual cycle — for iPhone & Apple Watch.",
     offers: { "@type": "Offer", category: "subscription" },
@@ -211,10 +213,10 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <AppStoreButton />
               <a
-                href={`mailto:${EMAIL}?subject=Notify%20me%20when%20Phase%20launches`}
+                href={`mailto:${EMAIL}?subject=Question%20about%20Phase`}
                 className="font-mono text-sm font-bold uppercase tracking-widest text-ink underline decoration-gold decoration-2 underline-offset-4 hover:text-gold-dark"
               >
-                Get launch updates →
+                Questions? Get in touch →
               </a>
             </div>
             <p className="mt-5 font-mono text-xs uppercase tracking-widest text-muted">
@@ -448,10 +450,10 @@ export default function Home() {
               Download on the App Store
             </a>
             <a
-              href={`mailto:${EMAIL}?subject=Notify%20me%20when%20Phase%20launches`}
+              href={`mailto:${EMAIL}?subject=Question%20about%20Phase`}
               className="font-mono text-sm font-bold uppercase tracking-widest text-ink underline decoration-2 underline-offset-4"
             >
-              Get launch updates →
+              Questions? Get in touch →
             </a>
           </div>
         </div>
