@@ -224,11 +224,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto w-[64%] max-w-[300px] md:w-full">
-            <Phone
-              src="/shots/reveal-hero.png"
-              alt="Phase showing your next power window and a four-week phase plan"
+          <div className="mx-auto w-full max-w-[460px] md:max-w-none">
+            <Image
+              src="/shots/hero-athlete.png"
+              alt="Phase on iPhone and Apple Watch — cycle-synced strength training"
+              width={1350}
+              height={2400}
               priority
+              className="h-auto w-full drop-shadow-2xl"
             />
           </div>
         </div>
