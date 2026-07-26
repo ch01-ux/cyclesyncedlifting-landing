@@ -224,7 +224,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto w-full max-w-[460px] md:max-w-none md:w-[112%] md:translate-x-[9%] xl:translate-x-0 xl:mr-[calc((56rem-100vw)/2)]">
+          <div className="mx-auto w-full max-w-[460px] md:max-w-none">
             <Image
               src="/shots/hero-athlete.png"
               alt="Phase on iPhone and Apple Watch — cycle-synced strength training"
