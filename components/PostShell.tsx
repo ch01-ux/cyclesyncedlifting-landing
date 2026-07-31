@@ -1,39 +1,79 @@
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getPost, getPosts, isPublished } from "@/app/blog/posts";
 
 const SITE = "https://cyclesyncedlifting.com";
 
 export type Faq = { q: string; a: string };
+export type Source = { label: string; url: string };
+
+/**
+ * Answer-first block. Sits directly under the H1 and gives the 40–60 word
+ * direct answer that AI assistants and featured snippets lift verbatim.
+ */
+export function Answer({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mt-8 rounded-2xl border-l-4 border-gold bg-paper-2 p-6">
+      <p className="font-mono text-xs font-bold uppercase tracking-widest text-gold-dark">
+        Short answer
+      </p>
+      <div className="answer mt-2 text-lg leading-relaxed text-ink">{children}</div>
+    </div>
+  );
+}
+
+/**
+ * Internal link to another post that degrades to plain text while that post is
+ * still scheduled. Lets a live post reference the rest of its cluster without
+ * ever pointing a reader — or a crawler — at a 404.
+ */
+export function PostLink({
+  slug,
+  children,
+}: {
+  slug: string;
+  children: React.ReactNode;
+}) {
+  if (!isPublished(getPost(slug))) return <>{children}</>;
+  return <Link href={`/blog/${slug}`}>{children}</Link>;
+}
 
 export default function PostShell({
   title,
   description,
   slug,
-  date, // "2026-07-05"
-  dateLabel, // "July 5, 2026"
-  readingTime,
-  category,
   faqs = [],
+  sources = [],
+  related = [],
   children,
 }: {
   title: string;
   description: string;
   slug: string;
-  date: string;
-  dateLabel: string;
-  readingTime: string;
-  category: string;
   faqs?: Faq[];
+  sources?: Source[];
+  /** Slugs of 2–4 posts to surface at the end. Unpublished ones are dropped. */
+  related?: string[];
   children: React.ReactNode;
 }) {
+  const post = getPost(slug);
+
+  // Scheduled post: the route exists in the build but stays dark until its
+  // publish date. Pages using this shell set `revalidate`, so it flips live on
+  // its own.
+  if (!isPublished(post)) notFound();
+
   const url = `${SITE}/blog/${slug}`;
+  const relatedPosts = getPosts(related).filter((p) => isPublished(p));
+
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: title,
     description,
-    datePublished: date,
-    dateModified: date,
+    datePublished: post.date,
+    dateModified: post.updated ?? post.date,
     author: { "@type": "Organization", name: "Phase — Cycle-Synced Lifting", url: SITE },
     publisher: {
       "@type": "Organization",
@@ -42,7 +82,22 @@ export default function PostShell({
     },
     mainEntityOfPage: url,
     image: `${SITE}/og.png`,
+    articleSection: post.category,
+    ...(sources.length
+      ? { citation: sources.map((s) => ({ "@type": "CreativeWork", name: s.label, url: s.url })) }
+      : {}),
   };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+      { "@type": "ListItem", position: 3, name: title, item: url },
+    ],
+  };
+
   const faqLd = faqs.length
     ? {
         "@context": "https://schema.org",
@@ -72,18 +127,38 @@ export default function PostShell({
       </header>
 
       <main className="mx-auto max-w-3xl px-5 py-14">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">
-          {dateLabel} · {readingTime} · {category}
-        </p>
-        <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink">
+        <nav
+          aria-label="Breadcrumb"
+          className="font-mono text-xs uppercase tracking-widest text-muted"
+        >
+          <Link href="/" className="hover:text-ink">Home</Link>
+          {" / "}
+          <Link href="/blog" className="hover:text-ink">Blog</Link>
+          {" / "}
+          <span className="text-gold-dark">{post.category}</span>
+        </nav>
+
+        <h1 className="mt-4 font-display text-4xl leading-tight tracking-tight text-ink">
           {title}
         </h1>
 
-        <div className="legal mt-8">{children}</div>
+        <p className="mt-4 text-sm text-muted">
+          By the <strong className="text-ink">Phase</strong> team ·{" "}
+          <time dateTime={post.date}>{post.dateLabel}</time>
+          {post.updatedLabel && (
+            <>
+              {" "}
+              · Updated <time dateTime={post.updated}>{post.updatedLabel}</time>
+            </>
+          )}{" "}
+          · {post.readingTime}
+        </p>
+
+        <div className="legal mt-2">{children}</div>
 
         {faqs.length > 0 && (
           <section className="mt-12">
-            <h2 className="font-display text-2xl text-ink">FAQ</h2>
+            <h2 className="font-display text-2xl text-ink">Frequently asked</h2>
             <div className="mt-4 divide-y divide-ink/10">
               {faqs.map((f) => (
                 <details key={f.q} className="group py-4">
@@ -95,6 +170,50 @@ export default function PostShell({
                 </details>
               ))}
             </div>
+          </section>
+        )}
+
+        {sources.length > 0 && (
+          <section className="mt-12">
+            <h2 className="font-display text-2xl text-ink">Sources</h2>
+            <ol className="mt-4 space-y-2 text-sm leading-relaxed text-muted">
+              {sources.map((s, i) => (
+                <li key={s.url}>
+                  <span className="font-mono text-gold-dark">[{i + 1}]</span>{" "}
+                  <a
+                    href={s.url}
+                    rel="nofollow noopener"
+                    target="_blank"
+                    className="underline decoration-ink/20 underline-offset-2 hover:text-ink"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {relatedPosts.length > 0 && (
+          <section className="mt-12">
+            <h2 className="font-display text-2xl text-ink">Keep reading</h2>
+            <ul className="mt-4 space-y-3">
+              {relatedPosts.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/blog/${p.slug}`}
+                    className="block rounded-2xl bg-paper-2 p-5 ring-1 ring-ink/5 transition hover:ring-gold/50"
+                  >
+                    <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                      {p.category} · {p.readingTime}
+                    </span>
+                    <span className="mt-2 block font-display text-lg leading-snug text-ink">
+                      {p.title}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 
@@ -142,6 +261,10 @@ export default function PostShell({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       {faqLd && (
         <script

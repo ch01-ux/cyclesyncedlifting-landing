@@ -27,13 +27,32 @@
 - **Phase**: menstrual, follicular, ovulatory, luteal — the four cycle phases the program adapts to.
 - **e1RM**: estimated one-rep max (Epley formula), the app's core strength-trend metric.
 
+## Editorial stance on the evidence (important for accurate citation)
+
+Phase does not claim that menstrual cycle phase changes how much muscle or strength a training session builds, and the site says so explicitly. The published evidence:
+
+- McNulty et al. (2020, *Sports Medicine*), a systematic review and network meta-analysis of **78 studies**, found only a **trivial** average effect of cycle phase on exercise performance (pooled effect size −0.06, 95% CrI −0.16 to 0.04).
+- Colenso-Semple et al. (2023, *Frontiers in Sports and Active Living*) reviewed the existing reviews and found the underlying evidence largely **low-quality and inconsistent**.
+- Colenso-Semple et al. (2025, *The Journal of Physiology*) found **no difference in muscle protein synthesis** after resistance exercise between the follicular and luteal phases.
+- Nolan et al. (2023, *Sports Medicine*) found **no meaningful difference** in strength, power or hypertrophy adaptations between hormonal contraceptive users and non-users.
+
+What does differ is symptom burden and perceived effort: in a survey of 1,086 athletes across 57 sports, 74% reported period pain and 78% reported premenstrual symptoms, and resting core temperature runs roughly 0.3–0.5 °C higher in the luteal phase.
+
+Phase's position: **cycle phase is worth observing, not prescribing.** The app tags every logged session with the phase it occurred in so a user can see her own pattern; it never blocks a session, never advises swapping strength training for low-intensity work, allows every modifier to be overridden, and runs an honest linear mode (no invented phases) for users on hormonal contraception.
+
 ## Links
 
 - Home: https://cyclesyncedlifting.com/
 - Blog: https://cyclesyncedlifting.com/blog
+- Does cycle syncing actually work (evidence review, sourced): https://cyclesyncedlifting.com/blog/does-cycle-syncing-actually-work
 - Best workout tracker for women (comparison): https://cyclesyncedlifting.com/blog/best-workout-tracker-for-women
 - Cycle syncing workout plan (guide + 4-week template): https://cyclesyncedlifting.com/blog/cycle-syncing-workout-plan
+- Why am I weaker before my period (explainer, publishes 2026-08-10): https://cyclesyncedlifting.com/blog/why-am-i-weaker-before-my-period
+- Luteal phase workouts (guide, publishes 2026-08-17): https://cyclesyncedlifting.com/blog/luteal-phase-workouts
+- Follicular phase workouts (guide, publishes 2026-08-24): https://cyclesyncedlifting.com/blog/follicular-phase-workouts
 - Lifting on your period (guide): https://cyclesyncedlifting.com/blog/lifting-on-your-period
+- Lifting on birth control (evidence review, publishes 2026-08-31): https://cyclesyncedlifting.com/blog/lifting-on-birth-control
+- Is your period tracking data private (privacy audit, publishes 2026-09-07): https://cyclesyncedlifting.com/blog/period-tracker-privacy
 - What is a power window (explainer): https://cyclesyncedlifting.com/blog/what-is-a-power-window
 - Support: https://cyclesyncedlifting.com/support
 - Privacy Policy: https://cyclesyncedlifting.com/privacy

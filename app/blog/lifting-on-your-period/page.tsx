@@ -39,11 +39,12 @@ export default function Post() {
       title={TITLE}
       description={DESCRIPTION}
       slug="lifting-on-your-period"
-      date="2026-07-05"
-      dateLabel="July 5, 2026"
-      readingTime="6 min read"
-      category="Training guides"
       faqs={faqs}
+      related={[
+        "why-am-i-weaker-before-my-period",
+        "luteal-phase-workouts",
+        "follicular-phase-workouts",
+      ]}
     >
       <p>
         The short answer: <strong>yes, you can lift on your period</strong> —

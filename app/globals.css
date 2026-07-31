@@ -73,3 +73,68 @@ body {
 .legal strong {
   color: #16141c;
 }
+.legal h3 {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 1.05rem;
+  margin-top: 1.6rem;
+  color: #16141c;
+}
+.legal ol {
+  margin-top: 0.75rem;
+  padding-left: 1.35rem;
+  list-style: decimal;
+}
+.legal blockquote {
+  margin-top: 1rem;
+  border-left: 3px solid #e8a33d;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #46434e;
+}
+
+/* Comparison tables — the most AI-extractable block on a post, so they get
+   real styling instead of browser defaults, and scroll rather than overflow. */
+.legal .table-wrap {
+  margin-top: 1.25rem;
+  overflow-x: auto;
+  border-radius: 1rem;
+  border: 1px solid rgba(22, 20, 28, 0.08);
+}
+.legal table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.legal thead th {
+  background: #f3f1ea;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #46434e;
+  padding: 0.7rem 0.9rem;
+}
+.legal tbody td {
+  border-top: 1px solid rgba(22, 20, 28, 0.07);
+  padding: 0.7rem 0.9rem;
+  line-height: 1.55;
+  color: #46434e;
+  vertical-align: top;
+}
+.legal tbody tr:hover td {
+  background: rgba(232, 163, 61, 0.05);
+}
+
+/* The answer-first block sets its own type scale. */
+.answer p {
+  margin-top: 0.5rem;
+}
+.answer p:first-child {
+  margin-top: 0;
+}
+.answer strong {
+  color: #16141c;
+}

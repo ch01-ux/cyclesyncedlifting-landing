@@ -39,11 +39,12 @@ export default function Post() {
       title={TITLE}
       description={DESCRIPTION}
       slug="what-is-a-power-window"
-      date="2026-07-05"
-      dateLabel="July 5, 2026"
-      readingTime="5 min read"
-      category="The science"
       faqs={faqs}
+      related={[
+        "does-cycle-syncing-actually-work",
+        "follicular-phase-workouts",
+        "cycle-syncing-workout-plan",
+      ]}
     >
       <p>
         The <strong>power window</strong>{" "}is the stretch of your menstrual

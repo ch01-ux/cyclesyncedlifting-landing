@@ -1,49 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { publishedPosts, scheduledPosts } from "./posts";
+
+// Re-render hourly so scheduled posts appear on their publish date without a
+// redeploy.
+export const revalidate = 3600;
+
+const SITE = "https://cyclesyncedlifting.com";
 
 export const metadata: Metadata = {
   title: "Blog — training with your cycle",
   description:
-    "Guides on cycle-synced strength training, women's workout trackers, and getting stronger by working with your hormones instead of against them.",
+    "Evidence-checked guides on strength training and the menstrual cycle: what the research supports, what it doesn't, and how to train through every phase.",
   alternates: { canonical: "/blog" },
 };
 
-const posts = [
-  {
-    slug: "best-workout-tracker-for-women",
-    title: "The Best Workout Tracker for Women in 2026: 6 Apps Compared",
-    excerpt:
-      "Strong, Hevy, Flo, Clue, Wild.AI, FitrWoman — we compared the most popular workout trackers and cycle apps, and found the gap every one of them leaves open.",
-    date: "July 5, 2026",
-    readingTime: "8 min read",
-  },
-  {
-    slug: "cycle-syncing-workout-plan",
-    title: "Cycle Syncing Workout Plan: How to Train in Every Phase (4-Week Template)",
-    excerpt:
-      "What to do in your menstrual, follicular, ovulatory and luteal phases — plus a 4-week strength template you can start this cycle.",
-    date: "July 5, 2026",
-    readingTime: "9 min read",
-  },
-  {
-    slug: "lifting-on-your-period",
-    title: "Lifting on Your Period: What Actually Helps (And What to Skip)",
-    excerpt:
-      "Yes, you can lift on your period. Here's how to adjust volume, intensity and expectations during your menstrual phase — without losing progress.",
-    date: "July 5, 2026",
-    readingTime: "6 min read",
-  },
-  {
-    slug: "what-is-a-power-window",
-    title: "What Is a Power Window? Your Cycle's Strongest Days, Explained",
-    excerpt:
-      "The stretch of your cycle when strength and power output tend to peak — the science, the one caution, and how to find yours.",
-    date: "July 5, 2026",
-    readingTime: "5 min read",
-  },
-];
-
 export default function Blog() {
+  const posts = publishedPosts();
+  const upcoming = scheduledPosts().slice(0, 3);
+
+  const listLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "The Phase blog",
+    url: `${SITE}/blog`,
+    description:
+      "Evidence-checked guides on strength training and the menstrual cycle.",
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      description: p.excerpt,
+      datePublished: p.date,
+      url: `${SITE}/blog/${p.slug}`,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-paper">
       <header className="border-b border-ink/5">
@@ -68,8 +59,9 @@ export default function Blog() {
           Training with your cycle
         </h1>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-          Honest guides on strength training, women&apos;s workout trackers, and
-          the science of syncing your program to your hormones.
+          Evidence-checked guides on strength training and the menstrual cycle —
+          including the parts of the research that don&apos;t flatter us. Every
+          claim is sourced.
         </p>
 
         <div className="mt-12 space-y-8">
@@ -79,7 +71,8 @@ export default function Blog() {
               className="rounded-2xl bg-paper-2 p-7 ring-1 ring-ink/5 transition hover:ring-gold/50"
             >
               <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                {p.date} · {p.readingTime}
+                <time dateTime={p.date}>{p.dateLabel}</time> · {p.readingTime} ·{" "}
+                <span className="text-gold-dark">{p.category}</span>
               </p>
               <h2 className="mt-3 font-display text-2xl leading-snug text-ink">
                 <Link href={`/blog/${p.slug}`} className="hover:text-gold-dark">
@@ -96,6 +89,26 @@ export default function Blog() {
             </article>
           ))}
         </div>
+
+        {upcoming.length > 0 && (
+          <section className="mt-14 rounded-2xl border border-dashed border-ink/15 p-7">
+            <h2 className="font-mono text-xs font-bold uppercase tracking-[0.28em] text-muted">
+              Publishing next
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {upcoming.map((p) => (
+                <li key={p.slug} className="text-muted">
+                  <span className="font-mono text-xs uppercase tracking-widest text-gold-dark">
+                    {p.dateLabel}
+                  </span>
+                  <span className="mt-1 block font-display text-lg leading-snug text-ink/70">
+                    {p.title}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </main>
 
       <footer className="border-t border-ink/5">
@@ -104,6 +117,11 @@ export default function Blog() {
           <Link href="/support" className="underline">Support</Link>
         </div>
       </footer>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(listLd) }}
+      />
     </div>
   );
 }

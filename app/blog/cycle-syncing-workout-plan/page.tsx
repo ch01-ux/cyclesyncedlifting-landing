@@ -46,11 +46,13 @@ export default function Post() {
       title={TITLE}
       description={DESCRIPTION}
       slug="cycle-syncing-workout-plan"
-      date="2026-07-05"
-      dateLabel="July 5, 2026"
-      readingTime="9 min read"
-      category="Training guides"
       faqs={faqs}
+      related={[
+        "does-cycle-syncing-actually-work",
+        "luteal-phase-workouts",
+        "follicular-phase-workouts",
+        "lifting-on-birth-control",
+      ]}
     >
       <p>
         A <strong>cycle syncing workout plan</strong>{" "}means matching your

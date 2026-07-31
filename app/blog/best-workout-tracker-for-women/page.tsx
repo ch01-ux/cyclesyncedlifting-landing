@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Is cycle-synced training backed by science?",
-    a: "Research links the late-follicular and ovulatory phases (higher estrogen) with higher power output and better strength adaptations, and the luteal phase with reduced recovery for many people. Responses vary between individuals, which is why Phase treats its phase estimates as training guidance — never medical advice — and learns from your logged sessions.",
+    a: "Not in its strong form. A meta-analysis of 78 studies found only trivial average differences in performance across cycle phases, and a 2025 study found no difference in muscle protein synthesis between the follicular and luteal phases. What is well documented is symptom burden — around 74% of athletes report period pain and 78% report premenstrual symptoms — which changes how a session feels and how much work gets done. That is why Phase tags your sessions by phase so you can see your own pattern, rather than prescribing a phase-based program.",
   },
 ];
 
@@ -239,6 +239,14 @@ export default function Post() {
               your cycle&apos;s power window
             </Link>
             .
+          </p>
+          <p>
+            And if you want the unvarnished version of the research before you
+            pick anything, read{" "}
+            <Link href="/blog/does-cycle-syncing-actually-work">
+              does cycle syncing actually work
+            </Link>{" "}
+            — including the studies that do not flatter our own category.
           </p>
         </div>
 
