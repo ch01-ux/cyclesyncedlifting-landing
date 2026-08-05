@@ -173,6 +173,15 @@ export default function Post() {
             detection that lifters live in. You get advice about your phase, then
             you go log your session somewhere else.
           </p>
+          <p>
+            Both belong to a wider category we compared separately — Jennis,
+            Sync N, Drop It, Fourmula and the rest — in{" "}
+            <Link href="/blog/best-cycle-syncing-apps">
+              the best cycle syncing apps
+            </Link>
+            . If you want cycle-aware training for running or perimenopause
+            rather than lifting, start there instead of here.
+          </p>
 
           <h2>Phase — the tracker and the cycle layer in one app</h2>
           <p>
@@ -228,6 +237,14 @@ export default function Post() {
             well. If you only want cycle predictions, Flo or Clue are fine. But if
             you lift and you have a menstrual cycle, the honest answer is that your
             strength was never linear — and your tracker shouldn&apos;t be either.
+          </p>
+          <p>
+            Comparing cycle apps rather than lifting trackers? We ranked the
+            nine that actually change your training in{" "}
+            <Link href="/blog/best-cycle-syncing-apps">
+              the best cycle syncing apps of 2026
+            </Link>
+            .
           </p>
           <p>
             Want the training side of this? Start with our{" "}

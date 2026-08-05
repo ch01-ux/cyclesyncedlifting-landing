@@ -29,6 +29,17 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "best-cycle-syncing-apps",
+    title: "The Best Cycle Syncing Apps in 2026: 9 Compared, Honestly",
+    excerpt:
+      "Most lists in this category are padded with period trackers and meditation apps. We compared the nine that actually change your training — Wild.AI, FitrWoman, Jennis, Sync N, Drop It and the rest — and named a winner per use case.",
+    date: "2026-08-05",
+    dateLabel: "August 5, 2026",
+    readingTime: "11 min read",
+    category: "Comparison",
+    priority: 0.9,
+  },
+  {
     slug: "does-cycle-syncing-actually-work",
     title: "Does Cycle Syncing Actually Work? What 78 Studies Say",
     excerpt:
