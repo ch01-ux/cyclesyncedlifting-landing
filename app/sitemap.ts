@@ -1,9 +1,12 @@
 import type { MetadataRoute } from "next";
 import { publishedPosts } from "./blog/posts";
 
-// Regenerate hourly so a scheduled post enters the sitemap on its publish date
-// rather than at the next deploy.
-export const revalidate = 3600;
+// `sitemap.ts` is a Route Handler that Next caches at build time unless the
+// route opts into dynamic config. `revalidate` alone left it frozen at the
+// build's idea of "today", so scheduled posts went live on the site but never
+// entered the sitemap. Rendering per request keeps the two in step; the file is
+// a dozen URLs, so the cost is nil.
+export const dynamic = "force-dynamic";
 
 const SITE = "https://cyclesyncedlifting.com";
 
