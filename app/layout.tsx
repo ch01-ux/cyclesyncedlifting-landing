@@ -21,18 +21,25 @@ const inter = Inter({
 });
 
 const SITE = "https://cyclesyncedlifting.com";
+// Keep in sync with the App Store listing (name + subtitle).
+const APP_NAME = "Phase: Gym & Lifting for Women";
+const TITLE = `${APP_NAME} — Cycle-Aware Workout Tracker`;
 const DESCRIPTION =
-  "Phase is the women's gym planner & workout tracker that syncs strength training to your menstrual cycle — push PRs when your hormones peak, ease off through PMS. For iPhone & Apple Watch.";
+  "Phase is the gym & lifting app for women — a real barbell tracker with plate math, RPE and e1RM that also knows your cycle. Push PRs in your power window, ease off through PMS. iPhone & Apple Watch.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Phase: Cycle Synced Workouts — Women's Gym Planner & Tracker",
+    default: TITLE,
     template: "%s · Phase",
   },
   description: DESCRIPTION,
-  applicationName: "Phase: Cycle Synced Workouts",
+  applicationName: APP_NAME,
   keywords: [
+    "gym app for women",
+    "lifting app for women",
+    "weightlifting app for women",
+    "barbell tracker",
     "cycle synced workouts",
     "women's gym planner",
     "women workout tracker",
@@ -56,6 +63,9 @@ export const metadata: Metadata = {
     "e1RM",
     "Apple Watch strength tracker",
     "women's weightlifting app",
+    "PCOS workout app",
+    "PMDD training",
+    "perimenopause strength training",
   ],
   authors: [{ name: "Cycle Synced Lifting" }],
   creator: "Cycle Synced Lifting",
@@ -64,8 +74,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE,
-    siteName: "Phase: Cycle Synced Workouts",
-    title: "Phase: Cycle Synced Workouts — Women's Gym Planner & Tracker",
+    siteName: APP_NAME,
+    title: TITLE,
     description: DESCRIPTION,
     locale: "en_US",
     images: [
@@ -73,13 +83,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Phase — train with your cycle. iPhone & Apple Watch.",
+        alt: "Phase — the gym & lifting app for women. iPhone & Apple Watch.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phase: Cycle Synced Workouts — Women's Gym Planner & Tracker",
+    title: TITLE,
     description: DESCRIPTION,
     images: ["/og.png"],
   },
@@ -101,14 +111,14 @@ const orgLd = {
   url: SITE,
   logo: `${SITE}/icon.png`,
   description:
-    "Maker of Phase: Cycle Synced Workouts — a women's gym planner & strength tracker for iPhone and Apple Watch that programs training around the menstrual cycle.",
+    "Maker of Phase: Gym & Lifting for Women — a barbell-first strength tracker for iPhone and Apple Watch that programs training around the menstrual cycle.",
 };
 
 const siteLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Phase: Cycle Synced Workouts",
-  alternateName: ["Phase", "Cycle Synced Lifting"],
+  name: APP_NAME,
+  alternateName: ["Phase", "Cycle Synced Lifting", "Phase: Cycle Synced Workouts"],
   url: SITE,
 };
 

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 /* ------------------------------------------------------------------ config */
 const SITE = "https://cyclesyncedlifting.com";
-const APP_STORE_URL = "https://apps.apple.com/us/app/phase-cycle-synced-workouts/id6785094654";
+const APP_STORE_URL = "https://apps.apple.com/us/app/phase-gym-lifting-for-women/id6785094654";
 const EMAIL = "hello@cyclesyncedlifting.com";
 
 const phases = [
@@ -14,48 +14,67 @@ const phases = [
 
 const features = [
   {
-    kicker: "Cycle-aware programming",
-    title: "Your program bends to your cycle — automatically.",
-    body: "Phase reads your cycle from Apple Health (or logs it in-app) and reshapes every week: build through your follicular phase, peak in your power window, ease volume in your luteal phase, and deload near your period. Stop blaming yourself for weeks that were never your fault.",
-    img: "/shots/today-ovulatory.png",
-    alt: "Phase Today screen showing a Power window day with today's session",
+    kicker: "First, a real tracker",
+    title: "It logs a barbell session properly. That part is non-negotiable.",
+    body: "Back Squat 210 × 6 at RPE 8, logged in two taps. Plate math, a live rest timer, previous-session numbers next to today's, automatic PR detection, and an 80-movement library. If Phase couldn't stand next to Hevy or Strong on the gym floor, the rest of this page wouldn't matter.",
+    img: "/shots/session-player.png",
+    alt: "Phase in-session logging screen showing Back Squat 210 lb x 6 with RPE selectors",
   },
   {
-    kicker: "Power-window predictions",
-    title: "See your next PR window weeks before it arrives.",
-    body: "Onboarding ends with your next four weeks mapped to training intent — the exact days you're primed to push, and the days to hold back. It's the moment you realize your strength was never random.",
-    img: "/shots/reveal-hero.png",
-    alt: "Phase phase-plan reveal showing the next four weeks and the upcoming power window",
-  },
-  {
-    kicker: "The signature chart",
-    title: "Watch your strength rise and fall with your cycle.",
-    body: "A phase-colored estimated-1RM chart nobody else shows you. The pattern jumps off the screen — most lifters find the majority of their PRs land inside their power window.",
+    kicker: "Then it explains the bad week",
+    title: "Your strength moves in a pattern. Here it is, in your own numbers.",
+    body: "A phase-colored estimated-1RM chart no other app shows you. Every session you log lands on it in your cycle's colours, so a dip stops being a mystery number and becomes a week you can place. Give it a few cycles and the shape of your month is right there — which dips were physiology, and which were just a bad night's sleep.",
     img: "/shots/progress.png",
     alt: "Phase progress chart with phase-colored strength data and a power-window PR badge",
   },
   {
-    kicker: "A real strength tracker",
-    title: "Plate math, rest timer, RPE, e1RM — the whole logger.",
-    body: "Phase stands on its own against any lifting tracker: fast set logging, a plate calculator, a live rest timer, RPE, and automatic PR detection — with cycle-aware coaching layered on top.",
-    img: "/shots/session-player.png",
-    alt: "Phase in-session logging screen with weight, reps, RPE and a laxity-caution note",
+    kicker: "So you stop losing the week",
+    title: "The deload gets planned instead of discovered mid-set.",
+    body: "Phase reads your cycle from Apple Health and reshapes the week ahead: build through your follicular phase, push in your power window, cap RPE and add rest through your luteal phase. You walk in knowing what today is for — instead of finding out under the bar.",
+    img: "/shots/today-ovulatory.png",
+    alt: "Phase Today screen showing a Power window day with today's session",
+  },
+  {
+    kicker: "And you can see it coming",
+    title: "Your next PR window, four weeks out.",
+    body: "Onboarding ends with your next four weeks mapped to training intent — the days you're primed to push, and the days to hold back. Plan the heavy attempt around your life instead of hoping the day feels good.",
+    img: "/shots/reveal-hero.png",
+    alt: "Phase phase-plan reveal showing the next four weeks and the upcoming power window",
+  },
+];
+
+const forYou = [
+  {
+    title: "You already lift",
+    body: "Barbells, 3–5 days a week, a year or more in. You have a program and you follow it. Phase is a logger first — not a class app, not a workout generator.",
+  },
+  {
+    title: "Your cycle actually costs you",
+    body: "Heavy or painful periods, PMS that flattens you, PCOS, PMDD, endo — or just one week a month where everything is heavier and no app has ever accounted for it.",
+  },
+  {
+    title: "You're already tracking both",
+    body: "A lifting app in one pocket, a period app in the other, and nothing connecting them. Phase reads your cycle from Apple Health so you keep logging periods wherever you already do.",
   },
 ];
 
 const shots = [
-  { verb: "See", benefit: "your next PR window", img: "/shots/reveal-hero.png" },
-  { verb: "Know", benefit: "why weeks feel off", img: "/shots/progress.png" },
-  { verb: "Log", benefit: "every set & PR", img: "/shots/session-player.png" },
-  { verb: "Map", benefit: "your whole cycle", img: "/shots/cycle.png" },
-  { verb: "Train", benefit: "with today's phase", img: "/shots/today-ovulatory.png" },
-  { verb: "Celebrate", benefit: "power-window PRs", img: "/shots/pr-card-lift.png" },
+  { verb: "See", benefit: "your strength isn't random", img: "/shots/progress.png" },
+  { verb: "Track", benefit: "like a lifter", img: "/shots/session-player.png" },
+  { verb: "Train", benefit: "barbells, not classes", img: "/shots/train.png" },
+  { verb: "Plan", benefit: "around your power window", img: "/shots/cycle.png" },
+  { verb: "Leave", benefit: "your phone in the bag", img: "/shots/today-ovulatory.png" },
+  { verb: "Share", benefit: "every hard-won PR", img: "/shots/pr-card-lift.png" },
 ];
 
 const faqs = [
   {
-    q: "What is cycle-synced lifting?",
-    a: "It's strength training that adapts to the phases of your menstrual cycle. Estrogen peaks in the late-follicular and ovulatory phases are linked with higher power output; the luteal phase often brings lower recovery. Phase programs around that — pushing intensity when you're primed and easing off when you're not.",
+    q: "Is cycle-synced training actually backed by science?",
+    a: "It's an active area of research, and we'd rather be straight with you than oversell it. Some studies find higher strength in the follicular phase, some find the opposite, and plenty find no difference at all — the honest summary is that the group-average effect is small and still debated. What isn't debated is how much this varies between individuals: two women with the same cycle length can have completely different weeks. That's exactly why Phase doesn't just hand you a generic 28-day template. It logs your sessions and symptoms, learns from your own RPE, and shows you your own pattern — and if your strength turns out not to track your cycle, the chart will show you that too.",
+  },
+  {
+    q: "I already use Hevy / Strong. Why switch?",
+    a: "Because they can't see half of what's driving your training. Phase does the same job — sets, reps, RPE, plate math, rest timer, PR detection, e1RM trends — and adds the layer they're missing. Two honest caveats. There's no way to import your training history yet, so you'll start fresh from your current working weights (your cycle does import from Apple Health). And the pattern takes real time to emerge: your chart is phase-coloured from the first few sessions, but Phase won't tell you something like \"your squat averages 7% higher in your follicular phase\" until it has around eight sessions of that lift in each phase — usually three to four months of consistent logging.",
   },
   {
     q: "Does Phase replace my period tracker?",
@@ -157,7 +176,7 @@ export default function Home() {
   const appLd = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    name: "Phase: Cycle Synced Workouts",
+    name: "Phase: Gym & Lifting for Women",
     alternateName: "Phase",
     operatingSystem: "iOS, watchOS",
     applicationCategory: "HealthApplication",
@@ -166,7 +185,7 @@ export default function Home() {
     installUrl: APP_STORE_URL,
     downloadUrl: APP_STORE_URL,
     description:
-      "Women's gym planner & workout tracker that syncs strength training to your menstrual cycle — for iPhone & Apple Watch.",
+      "The gym & lifting app for women — a real barbell tracker with plate math, RPE and e1RM that also programs around your menstrual cycle. For iPhone & Apple Watch.",
     offers: { "@type": "Offer", category: "subscription" },
   };
 
@@ -199,16 +218,16 @@ export default function Home() {
         <div className="glow pointer-events-none absolute left-1/2 top-40 h-[720px] w-[720px] -translate-x-1/2" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-14 md:grid-cols-2 md:pb-28 md:pt-24">
           <div>
-            <Kicker>Cycle-synced strength training</Kicker>
+            <Kicker>The gym app for women who lift</Kicker>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl">
               Your strength isn&apos;t random.
               <span className="block text-gold">It moves with your cycle.</span>
             </h1>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-              Phase is the women&apos;s gym planner &amp; workout tracker that
-              programs around your menstrual cycle — push PRs when your hormones
-              peak, ease off through PMS week, and finally understand your
-              &ldquo;off&rdquo; weeks.
+              Phase is a real barbell tracker — sets, reps, RPE, plate math, e1RM
+              trends — built for women. It just happens to know why some weeks
+              feel heavier, so you can push PRs in your power window and stop
+              reading a rough week as failure.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <AppStoreButton />
@@ -241,15 +260,39 @@ export default function Home() {
       <section className="border-y border-ink/5 bg-ink text-paper">
         <div className="mx-auto max-w-4xl px-5 py-16 text-center md:py-24">
           <p className="font-display text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl">
-            Most training plans treat every week the same.
-            <span className="text-gold"> Your body doesn&apos;t.</span>
+            You hit 225 last month. Today 185 moves like a truck.
+            <span className="text-gold"> Your log just shows a red arrow.</span>
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-paper/70">
-            Strength and recovery shift across your cycle. Period apps predict
-            bleeding but don&apos;t train you; lifting apps program in a straight
-            line as if every week is identical. Phase is the app that lives in
-            between — a rigorous tracker that finally accounts for your hormones.
+            Every lifting app on your phone is built to show a line going up. So
+            the week you were bleeding, sleeping badly, and still made it to the
+            gym gets recorded as a failure — and three months of that is how good
+            lifters quit good programs. Phase logs the same week and tells you
+            what it actually was.
           </p>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------- who it's for */}
+      <section className="mx-auto max-w-6xl px-5 pt-16 md:pt-24">
+        <div className="text-center">
+          <Kicker>Who Phase is built for</Kicker>
+          <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl leading-tight tracking-tight text-ink sm:text-4xl">
+            If all three sound like you, this app was made for you.
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {forYou.map((f) => (
+            <div
+              key={f.title}
+              className="rounded-2xl border border-ink/10 bg-white/60 p-7"
+            >
+              <h3 className="font-display text-xl leading-snug tracking-tight text-ink">
+                {f.title}
+              </h3>
+              <p className="mt-3 text-base leading-relaxed text-muted">{f.body}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -438,12 +481,12 @@ export default function Home() {
       <section className="bg-gold">
         <div className="mx-auto max-w-4xl px-5 py-20 text-center md:py-28">
           <h2 className="font-display text-4xl leading-[0.95] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            Train with your body,
-            <span className="block">not against it.</span>
+            Stop losing a week
+            <span className="block">every month.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
-            Cycle-synced programming, the phase chart, a real tracker, and your
-            Apple Watch — all in one app.
+            Keep the log you&apos;d keep anyway. Get back the four weeks a year
+            you spend wondering what went wrong.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a
@@ -472,9 +515,8 @@ export default function Home() {
                 Cycle-Synced Lifting
               </p>
               <p className="mt-4 text-sm leading-relaxed text-paper/60">
-                The women&apos;s gym planner &amp; workout tracker — strength
-                programming that follows your menstrual cycle. For iPhone &amp;
-                Apple Watch.
+                The gym &amp; lifting app for women — a real barbell tracker that
+                also knows your cycle. For iPhone &amp; Apple Watch.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-10 font-mono text-sm">
